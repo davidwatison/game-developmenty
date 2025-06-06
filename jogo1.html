@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo Plataforma</title>
+  <style>
+    #game {
+      width: 600px;
+      height: 300px;
+      background-color: #caf0f8;
+      position: relative;
+      overflow: hidden;
+      margin: 30px auto;
+    }
+
+    #player {
+      width: 50px;
+      height: 50px;
+      background-color: #ff595e;
+      position: absolute;
+      bottom: 20px;
+      left: 50px;
+    }
+
+    #ground {
+      width: 100%;
+      height: 20px;
+      background-color: #0077b6;
+      position: absolute;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">Jogo de Plataforma</h1>
+  <div id="game">
+    <div id="player"></div>
+    <div id="ground"></div>
+  </div>
+
+  <script>
+    const player = document.getElementById("player");
+    let posX = 50;
+
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "ArrowRight") {
+        posX += 10;
+      } else if (e.key === "ArrowLeft") {
+        posX -= 10;
+      }
+      player.style.left = posX + "px";
+    });
+  </script>
+</body>
+</html>
