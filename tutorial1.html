@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Tutorial 1: Jogo de Plataforma</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    h1, h2 {
+      color: #0077b6;
+    }
+    code {
+      background-color: #e0e0e0;
+      display: block;
+      padding: 10px;
+      border-radius: 5px;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tutorial 1: Como criar um jogo de plataforma simples</h1>
+
+  <h2>Passo 1: Estrutura HTML</h2>
+  <p>O jogo será composto de uma div chamada <code>#game</code>, contendo um jogador e o chão:</p>
+  <code>
+    &lt;div id="game"&gt;<br>
+    &nbsp;&nbsp;&lt;div id="player"&gt;&lt;/div&gt;<br>
+    &nbsp;&nbsp;&lt;div id="ground"&gt;&lt;/div&gt;<br>
+    &lt;/div&gt;
+  </code>
+
+  <h2>Passo 2: Estilo com CSS</h2>
+  <p>Agora vamos dar aparência ao jogador e ao chão:</p>
+  <code>
+    #game {<br>
+    &nbsp;&nbsp;width: 600px;<br>
+    &nbsp;&nbsp;height: 300px;<br>
+    &nbsp;&nbsp;background-color: #caf0f8;<br>
+    &nbsp;&nbsp;position: relative;<br>
+    &nbsp;&nbsp;margin: 0 auto;<br>
+    }<br><br>
+    #player {<br>
+    &nbsp;&nbsp;width: 50px;<br>
+    &nbsp;&nbsp;height: 50px;<br>
+    &nbsp;&nbsp;background-color: #ff595e;<br>
+    &nbsp;&nbsp;position: absolute;<br>
+    &nbsp;&nbsp;bottom: 20px;<br>
+    &nbsp;&nbsp;left: 50px;<br>
+    }<br><br>
+    #ground {<br>
+    &nbsp;&nbsp;width: 100%;<br>
+    &nbsp;&nbsp;height: 20px;<br>
+    &nbsp;&nbsp;background-color: #0077b6;<br>
+    &nbsp;&nbsp;position: absolute;<br>
+    &nbsp;&nbsp;bottom: 0;<br>
+    }
+  </code>
+
+  <h2>Passo 3: Movimentação com JavaScript</h2>
+  <p>Adicione este código ao final da página para mover o jogador com as setas:</p>
+  <code>
+    &lt;script&gt;<br>
+    const player = document.getElementById("player");<br>
+    let posX = 50;<br><br>
+    document.addEventListener("keydown", function(event) {<br>
+    &nbsp;&nbsp;if (event.key === "ArrowRight") {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;posX += 10;<br>
+    &nbsp;&nbsp;} else if (event.key === "ArrowLeft") {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;posX -= 10;<br>
+    &nbsp;&nbsp;}<br>
+    &nbsp;&nbsp;player.style.left = posX + "px";<br>
+    });<br>
+    &lt;/script&gt;
+  </code>
+
+  <p>Pronto! Agora você tem um jogo básico de plataforma.</p>
+
+  <a href="jogo1.html">Clique aqui para testar o jogo completo</a>
+</body>
+</html>
